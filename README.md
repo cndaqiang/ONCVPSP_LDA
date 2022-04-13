@@ -1,3 +1,21 @@
+# ONCVPSP_LDA
+This project forks from [pipidog/ONCVPSP](https://github.com/pipidog/ONCVPSP).
+I only change iexc in the input parameters to 3 (XC_LDA_X & XC_LDA_C_PZ), and use ONCVPSP to generate the pseudopotential of LDA for Quantum Espresso in UPF.
+
+* Naming convention:
+  lad.xx.in => the input file for ONCVPSP generation
+  xx_ONCV_PZ_sr.upf => scalar relativistic (for non-spin-orbit calculations)
+  xx_ONCV_PZ_fr.upf => fully relativistic (for spin-orbit calculatons)
+
+* Some element errors
+```
+ pspot: ERROR first pseudo wave function has node,          program will stop
+ pspot: ERROR try changing psp parameters for this l
+(python37) cndaqiang@mommint:~/code/ONCVPSP_LDA/abinit$ for i in $( ls | grep PZ); do echo $i $(grep UPF $i | head -1) ; done | grep -v UPF | xargs
+Ba_ONCV_PZ_fr.upf Bi_ONCV_PZ_fr.upf Cs_ONCV_PZ_fr.upf F_ONCV_PZ_fr.upf F_ONCV_PZ_sr.upf O_ONCV_PZ_fr.upf O_ONCV_PZ_sr.upf Os_ONCV_PZ_fr.upf Pb_ONCV_PZ_fr.upf Po_ONCV_PZ_fr.upf Pt_ONCV_PZ_fr.upf Rn_ONCV_PZ_fr.upf Se_ONCV_PZ_fr.upf Sn_ONCV_PZ_fr.upf Te_ONCV_PZ_fr.upf Xe_ONCV_PZ_fr.upf
+``` 
+* Use at your own risk!
+
 # ONCVPSP
 Optimized Norm-Conserving Vanderbilt Pseudopotential (ONCVPSP) for Quantum Espresso in UPF 
 format. 
