@@ -3,14 +3,13 @@ This project forks from [pipidog/ONCVPSP](https://github.com/pipidog/ONCVPSP).
 
 I only change iexc in the input parameters to 3 (XC_LDA_X & XC_LDA_C_PZ), and use [ONCVPSP](http://www.mat-simresearch.com/) to generate the pseudopotential of LDA for Quantum Espresso in UPF.
 
-
-* Naming convention:
-  3.3.1 and 4.0.1 mean the version number of ONCVPSP.
-  xx.in => the input file for ONCVPSP generation
-  xx_ONCV_FUN_sr.upf => scalar relativistic (for non-spin-orbit calculations)
-  xx_ONCV_FUN_fr.upf => fully relativistic (for spin-orbit calculatons)
-  FUN:PBE => Perdew, Burke & Ernzerhof exchange and Perdew, Burke & Ernzerhof correlation
-  FUN:PZ  => LDA exchange and Perdew & Zunger correlation
+* Naming convention:  
+    3.3.1 and 4.0.1 mean the version number of ONCVPSP.  
+    xx.in => the input file for ONCVPSP generation  
+    xx_ONCV_FUN_sr.upf => scalar relativistic (for non-spin-orbit calculations)  
+    xx_ONCV_FUN_fr.upf => fully relativistic (for spin-orbit calculatons)  
+    FUN:PBE => Perdew, Burke & Ernzerhof exchange and Perdew, Burke & Ernzerhof correlation  
+    FUN:PZ  => LDA exchange and Perdew & Zunger correlation  
 
 * Some elements failed with version 3.3.1, but were generated without problems in version 4.0.1, or vice versa.
 ```
