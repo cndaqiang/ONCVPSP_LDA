@@ -1,20 +1,45 @@
 # ONCVPSP_LDA
 This project forks from [pipidog/ONCVPSP](https://github.com/pipidog/ONCVPSP).
-I only change iexc in the input parameters to 3 (XC_LDA_X & XC_LDA_C_PZ), and use ONCVPSP to generate the pseudopotential of LDA for Quantum Espresso in UPF.
+
+I only change iexc in the input parameters to 3 (XC_LDA_X & XC_LDA_C_PZ), and use [ONCVPSP](http://www.mat-simresearch.com/) to generate the pseudopotential of LDA for Quantum Espresso in UPF.
+
 
 * Naming convention:
-  lad.xx.in => the input file for ONCVPSP generation
-  xx_ONCV_PZ_sr.upf => scalar relativistic (for non-spin-orbit calculations)
-  xx_ONCV_PZ_fr.upf => fully relativistic (for spin-orbit calculatons)
+  3.3.1 and 4.0.1 mean the version number of ONCVPSP.
+  xx.in => the input file for ONCVPSP generation
+  xx_ONCV_FUN_sr.upf => scalar relativistic (for non-spin-orbit calculations)
+  xx_ONCV_FUN_fr.upf => fully relativistic (for spin-orbit calculatons)
+  FUN:PBE => Perdew, Burke & Ernzerhof exchange and Perdew, Burke & Ernzerhof correlation
+  FUN:PZ  => LDA exchange and Perdew & Zunger correlation
 
-* Some element errors
+* Some elements failed with version 3.3.1, but were generated without problems in version 4.0.1, or vice versa.
 ```
- pspot: ERROR first pseudo wave function has node,          program will stop
- pspot: ERROR try changing psp parameters for this l
-(python37) cndaqiang@mommint:~/code/ONCVPSP_LDA/abinit$ for i in $( ls | grep PZ); do echo $i $(grep UPF $i | head -1) ; done | grep -v UPF | xargs
-Ba_ONCV_PZ_fr.upf Bi_ONCV_PZ_fr.upf Cs_ONCV_PZ_fr.upf F_ONCV_PZ_fr.upf F_ONCV_PZ_sr.upf O_ONCV_PZ_fr.upf O_ONCV_PZ_sr.upf Os_ONCV_PZ_fr.upf Pb_ONCV_PZ_fr.upf Po_ONCV_PZ_fr.upf Pt_ONCV_PZ_fr.upf Rn_ONCV_PZ_fr.upf Se_ONCV_PZ_fr.upf Sn_ONCV_PZ_fr.upf Te_ONCV_PZ_fr.upf Xe_ONCV_PZ_fr.upf
+cndaqiang@mommint:~/ONCVPSP$ find . | grep fail$ | sort
+./abinit_PBE_4.0.1/W_ONCV_PBE_fr.fail
+./abinit_PZ_3.3.1/F_ONCV_PZ_fr.fail
+./abinit_PZ_3.3.1/F_ONCV_PZ_sr.fail
+./abinit_PZ_3.3.1/O_ONCV_PZ_fr.fail
+./abinit_PZ_3.3.1/O_ONCV_PZ_sr.fail
+./abinit/W_ONCV_PBE_fr.fail
+./sg15_PBE_3.3.1/Cs_ONCV_PBE_fr.fail
+./sg15_PBE_4.0.1/Ar_ONCV_PBE_fr.fail
+./sg15_PBE_4.0.1/Ar_ONCV_PBE_sr.fail
+./sg15_PBE_4.0.1/Cs_ONCV_PBE_fr.fail
+./sg15_PZ_3.3.1/Cs_ONCV_PZ_fr.fail
+./sg15_PZ_3.3.1/Ga_ONCV_PZ_fr.fail
+./sg15_PZ_3.3.1/Ga_ONCV_PZ_sr.fail
+./sg15_PZ_3.3.1/Kr_ONCV_PZ_fr.fail
+./sg15_PZ_3.3.1/Si_ONCV_PZ_fr.fail
+./sg15_PZ_3.3.1/Si_ONCV_PZ_sr.fail
+./sg15_PZ_4.0.1/Ar_ONCV_PZ_fr.fail
+./sg15_PZ_4.0.1/Ar_ONCV_PZ_sr.fail
+./sg15_PZ_4.0.1/Cs_ONCV_PZ_fr.fail
+./sg15_PZ_4.0.1/Ga_ONCV_PZ_fr.fail
+./sg15_PZ_4.0.1/Ga_ONCV_PZ_sr.fail
 ``` 
+
 * Use at your own risk!
+
 
 # ONCVPSP
 Optimized Norm-Conserving Vanderbilt Pseudopotential (ONCVPSP) for Quantum Espresso in UPF 

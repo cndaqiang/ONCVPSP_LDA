@@ -1,0 +1,173 @@
+ONCVPSP  (Optimized Norm-Conservinng Vanderbilt PSeudopotential)
+fully-relativistic version 3.3.1 12/12/2017
+
+
+While it is not required under the terms of the GNU GPL, it issuggested that you cite the arXiv preprint or Phys. Rev. B paperthrough which you found this code in any publication using thesepseudopotentials.  The reference will be here when available.
+
+
+# ATOM AND REFERENCE CONFIGURATION
+# atsym  z   nc   nv     iexc    psfile
+  Cs 55.00    9    3       3      upf 
+#
+#   n    l    f              energy (Ha)
+#   n    l    f        l+1/2             l-1/2
+    1    0    2.00    -1.3131773D+03
+    2    0    2.00    -2.0594778D+02
+    2    1    6.00    -1.8091047D+02    -1.9383918D+02
+    3    0    2.00    -4.2798439D+01
+    3    1    6.00    -3.5254990D+01    -3.7731411D+01
+    3    2   10.00    -2.5792395D+01    -2.6318747D+01
+    4    0    2.00    -8.0655710D+00
+    4    1    6.00    -5.7370730D+00    -6.2466352D+00
+    4    2   10.00    -2.6911443D+00    -2.7755703D+00
+    5    0    2.00    -9.8712699D-01
+    5    1    6.00    -4.8106596D-01    -5.4243328D-01
+    6    0    1.00    -8.1843842D-02
+#
+# PSEUDOPOTENTIAL AND OPTIMIZATION
+# lmax
+    2
+#
+#   l,   rc,     ep,   ncon, nbas, qcut
+    0   2.55092   0.00000    5    8   4.59617
+    1   2.28842   0.00000    5    8   6.56010
+    2   2.17811   0.04706    5    8   4.28019
+#
+# LOCAL POTENTIAL
+# lloc, lpopt,  rc(5),   dvloc0
+    4    5   1.77341      0.00000
+#
+# VANDERBILT-KLEINMAN-BYLANDER PROJECTORs
+# l, nproj, debl
+    0    2   0.00000
+    1    2   1.86520
+    2    2   1.81189
+#
+# MODEL CORE CHARGE
+# icmod, fcfact, rcfact
+    0   0.00000   0.00000
+#
+# LOG DERIVATIVE ANALYSIS
+# epsh1, epsh2, depsh
+   -5.00    3.00    0.02
+#
+# OUTPUT GRID
+# rlmax, drl
+    6.00    0.01
+#
+# TEST CONFIGURATIONS
+# ncnf
+    0
+# nvcnf
+#   n    l    f
+
+
+Reference configufation results
+  iterations    26
+  all-electron total energy (Ha)   -7.78417447D+03
+
+Begin loop to  construct optimized pseudo wave functions
+and semi-local pseudopoentials for all angular momenta
+
+  All-electron reference function large-component-only renormalization
+    cnorm=   1.00007807  l=  0  n=  5  kap= -1
+
+  All-electron reference function large-component-only renormalization
+    cnorm=   1.00000723  ll=  0,  n=  6  kap= -1
+
+First projector wave function outermost peak radius =  1.534, l= 0
+
+  All-electron projector functions [0,rc] norms and overlap, l= 0
+    qq(1,1)=  0.90884473  qq(1,2)= -0.12879422  qq(2,2)=  0.03877728
+
+
+Calculating first optimized projector for l=   0
+
+    Constraint consistency test
+      pswf0 val/der aewf val/der     diff
+        0.17615546    0.17615546    1.11D-13
+       -0.24783052   -0.24783052    8.60D-16
+        0.31189044    0.31189044   -1.22D-15
+       -0.26796806   -0.26796806   -6.88D-14
+       -0.23790138   -0.23790138   -1.38D-13
+
+    Fraction of norm inside rc  0.908845
+    Optimizing pswf for qcut= 4.60 a_B^-1,  ecut=10.58 Ha
+    q_infinity defining residual KE= 20.00  (E_inf=  200.0 Ha)
+    Residual KE error=  7.91D-05 Ha
+
+    Total kinetic energy consistency test
+      Fourier integration compared to d^2/dr^2 integral
+      Fourier  0.44266709  r-space=  0.44266709  ratio=  1.00000001
+    Potential consistency test at r_c
+      vpsp= -0.65108399  vae= -0.65109265  difference= -8.65D-06
+
+    Energy error per electron        Cutoff
+         Ha          eV             Ha
+         0.01000     0.27211        6.45
+         0.00100     0.02721        8.54
+         0.00010     0.00272       10.77
+         0.00001     0.00027       23.84
+
+Calculating second optimized projector for l=   0
+
+    Constraint consistency test
+      pswf0 val/der aewf val/der     diff
+        0.06712902    0.06712902   -4.72D-16
+        0.10737157    0.10737157    1.96D-15
+       -0.16026175   -0.16026175    3.30D-15
+        0.11856295    0.11856295    2.84D-14
+        0.12014480    0.12014480    3.89D-14
+       -0.12879422   -0.12879422   -8.33D-17
+
+    Fraction of norm inside rc  0.038777
+    Optimizing pswf for qcut= 4.60 a_B^-1,  ecut=10.58 Ha
+    q_infinity defining residual KE= 20.00  (E_inf=  200.0 Ha)
+    Residual KE error=  1.90D-05 Ha
+
+    Total kinetic energy consistency test
+      Fourier integration compared to d^2/dr^2 integral
+      Fourier  0.12838814  r-space=  0.12838833  ratio=  0.99999857
+    Potential consistency test at r_c
+    "vpsp"= -0.65111451  vae= -0.65109265  difference=  2.19D-05
+
+    Energy error per electron        Cutoff
+         Ha          eV             Ha
+         0.01000     0.27211        3.86
+         0.00100     0.02721        7.11
+         0.00010     0.00272        9.22
+         0.00001     0.00027       11.96
+
+  All-electron reference function large-component-only renormalization
+    cnorm=   1.00005256  l=  1  n=  5  kap= -2
+
+  Wellstate for l =  1  n =  6  kappa= -2
+    eigenvalue =   1.3637
+    asymptotic potential =   2.0400
+    half-point radius =  2.8839
+
+  All-electron reference function large-component-only renormalization
+    cnorm=   1.00007275  ll=  1,  n=  6  kap= -2
+
+First projector wave function outermost peak radius =  1.791, l= 1
+
+  All-electron projector functions [0,rc] norms and overlap, l= 1
+    qq(1,1)=  0.64529806  qq(1,2)= -0.26340382  qq(2,2)=  0.30733225
+
+
+Calculating first optimized projector for l=   1
+
+    Constraint consistency test
+      pswf0 val/der aewf val/der     diff
+        0.29791971    0.29791971   -8.61D-13
+       -0.26827022   -0.26827022   -1.57D-14
+        0.12863640    0.12863640   -1.21D-14
+        0.31640537    0.31640537    2.39D-13
+       -1.59064232   -1.59064232   -9.06D-14
+
+    Fraction of norm inside rc  0.645298
+    Optimizing pswf for qcut= 6.56 a_B^-1,  ecut=21.52 Ha
+    q_infinity defining residual KE= 20.00  (E_inf=  200.0 Ha)
+    Residual KE error=  7.32D-07 Ha
+ pspot: ERROR first pseudo wave function has node,          program will stop
+ pspot: ERROR try changing psp parameters for this l

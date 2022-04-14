@@ -1,0 +1,90 @@
+ONCVPSP  (Optimized Norm-Conservinng Vanderbilt PSeudopotential)
+relativistic version 4.0.1 06/04/2019
+
+
+While it is not required under the terms of the GNU GPL, it is
+suggested that you cite D. R. Hamann, Phys. Rev. B 88, 085117 (2013)
+in any publication utilizing these pseudopotentials.
+
+
+# ATOM AND REFERENCE CONFIGURATION
+# atsym  z   nc   nv     iexc    psfile
+  Ar 18.00    3    2       3      upf 
+#
+#   n    l    f        energy (Ha)
+    1    0    2.00    -1.1429070D+02
+    2    0    2.00    -1.0875463D+01
+    2    1    6.00    -8.4193534D+00    -8.5012531D+00
+    3    0    2.00    -8.9158739D-01
+    3    1    6.00    -3.7948083D-01    -3.8607025D-01
+#
+# PSEUDOPOTENTIAL AND OPTIMIZATION
+# lmax
+    1
+#
+#   l,   rc,      ep,       ncon, nbas, qcut
+    0   2.64980   0.00000    5    8   7.97831
+    1   1.77414   0.00000    5    8   7.45116
+#
+# LOCAL POTENTIAL
+# lloc, lpopt,  rc(5),   dvloc0
+    4    5   1.40453      0.00000
+#
+# VANDERBILT-KLEINMAN-BYLANDER PROJECTORs
+# l, nproj, debl
+    0    2   0.57200
+    1    2   3.20739
+#
+# MODEL CORE CHARGE
+# icmod, fcfact, rcfact
+    0   0.00000   0.00000
+#
+# LOG DERIVATIVE ANALYSIS
+# epsh1, epsh2, depsh
+   -5.00    3.00    0.02
+#
+# OUTPUT GRID
+# rlmax, drl
+  6.0000  0.0100
+#
+# TEST CONFIGURATIONS
+# ncnf
+    0
+# nvcnf
+#   n    l    f
+
+
+Reference configufation results
+  iterations    21
+  all-electron total energy (Ha)   -5.27809405D+02
+
+Begin loop to  construct optimized pseudo wave functions
+and semi-local pseudopoentials for all angular momenta
+
+WARNING wellstate: negative energy specified for n= 4 l=  0
+WARNING scattering state with energy  0.25000000
+WARNING will be used for the first projector
+
+   Wellstate for l =  0  n =  4 kap= -1
+     eigenvalue =   0.2500
+     asymptotic potential =   0.7500
+     half-point radius =  4.1587
+
+Calculating optimized projector #   1
+
+ for l=   0
+
+    Constraint consistency test
+      pswf0 val/der aewf val/der     diff
+        0.10190852    0.10190852    1.53D-14
+       -0.15547335   -0.15547335   -7.63D-15
+        0.23495155    0.23495155    2.29D-14
+       -0.34214513   -0.34214513    1.74D-13
+        0.44034587    0.44034587   -1.25D-14
+
+    Fraction of norm inside rc  0.969387
+    Optimizing pswf for qcut=   7.98 a_B^-1,  ecut=  31.87 Ha
+    q_infinity defining residual KE= 20.00  (E_inf=  200.0 Ha)
+    Residual kinetic energy error=  1.74D-10 Ha
+ ERROR pspot:  first pseudo wave function has node,          program will stop
+ ERROR pspot: try changing psp parameters for this l
