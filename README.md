@@ -13,13 +13,11 @@ I only change iexc in the input parameters to 3 (XC_LDA_X & XC_LDA_C_PZ), and us
 
 * Some elements failed with version 3.3.1, but were generated without problems in version 4.0.1, or vice versa.
 ```
-cndaqiang@mommint:~/ONCVPSP$ find . | grep fail$ | sort
-./abinit_PBE_4.0.1/W_ONCV_PBE_fr.fail
+cndaqiang@mommint:~/code/ONCVPSP_LDA$ find . | grep fail$ | sort
 ./abinit_PZ_3.3.1/F_ONCV_PZ_fr.fail
 ./abinit_PZ_3.3.1/F_ONCV_PZ_sr.fail
 ./abinit_PZ_3.3.1/O_ONCV_PZ_fr.fail
 ./abinit_PZ_3.3.1/O_ONCV_PZ_sr.fail
-./abinit/W_ONCV_PBE_fr.fail
 ./sg15_PBE_3.3.1/Cs_ONCV_PBE_fr.fail
 ./sg15_PBE_4.0.1/Ar_ONCV_PBE_fr.fail
 ./sg15_PBE_4.0.1/Ar_ONCV_PBE_sr.fail
